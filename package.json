@@ -37,7 +37,7 @@
 		"**/*.{json,scss,css,html,js,php}": [
 			"pretty-quick --staged",
 			"eslint --fix",
-			"./vendor/bin/phpcbf --standard=phpcs.ruleset.xml",
+			"./vendor/bin/phpcbf",
 			"git add"
 		],
 		"{package,composer,.eslintrc,Gruntfile}.{json,js}": [
