@@ -1,28 +1,19 @@
-const {
-	helpers,
-	externals,
-	presets,
-} = require('@humanmade/webpack-helpers');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { choosePort, filePath } = helpers;
-const SystemBellPlugin = require('system-bell-webpack-plugin');
+const { helpers, externals, presets } = require('@humanmade/webpack-helpers');
+const { choosePort } = helpers;
+const baseConfig = require('./webpack.config.base');
 
-const config = choosePort(9090).then((port) => {
-	const config = presets.development({
+const config = choosePort(9090).then((port) =>
+	presets.development({
+		...baseConfig,
 		devServer: {
 			port,
 		},
 		externals,
-		entry: {
-			editor: filePath('src/index.js'),
-		},
 		output: {
-			path: filePath('dist'),
+			...baseConfig.output,
 			publicPath: `http://localhost:${port}/dist/`,
 		},
-		plugins: [new CleanWebpackPlugin(), new SystemBellPlugin()],
-	});
-	return config;
-});
+	}),
+);
 
 module.exports = config;

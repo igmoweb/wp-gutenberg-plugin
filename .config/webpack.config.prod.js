@@ -1,17 +1,10 @@
-const { helpers, externals, presets } = require( '@humanmade/webpack-helpers' );
-const { filePath } = helpers;
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const SystemBellPlugin = require('system-bell-webpack-plugin');
+const { externals, presets } = require('@humanmade/webpack-helpers');
+const baseConfig = require('./webpack.config.base');
 
-module.exports = presets.production( {
-  externals,
-  entry: {
-    editor: filePath( 'src/index.js' ),
-  },
-  output: {
-    path: filePath( 'dist' ),
-  },
-  plugins: [
-    new CleanWebpackPlugin(),new SystemBellPlugin()
-  ]
-} );
+module.exports = presets.production({
+	...baseConfig,
+	externals,
+	performance: {
+		hints: 'warning',
+	},
+});

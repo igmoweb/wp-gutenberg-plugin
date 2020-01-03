@@ -2,7 +2,7 @@
 
 namespace WPGutenbergPlugin;
 
-use WPGutenbergPlugin\Admin\Editor;
+use WPGutenbergPlugin\EditorAssets;
 
 /**
  * Main plugin file. Initializes the whole plugin.
@@ -14,8 +14,6 @@ class Plugin {
 	 * Initializes the plugin.
 	 */
 	public function init() {
-		if ( is_admin() ) {
-			Editor\init();
-		}
+		EditorAssets\init();
 	}
 }

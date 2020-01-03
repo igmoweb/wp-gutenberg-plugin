@@ -10,10 +10,8 @@ namespace WPGutenbergPlugin;
  */
 function init() {
 	require_once __DIR__ . '/inc/class-plugin.php';
+	require_once __DIR__ . '/inc/editor-assets.php';
 	require_once __DIR__ . '/inc/manifest.php';
-	if ( is_admin() ) {
-		require_once __DIR__ . '/inc/admin/editor.php';
-	}
 
 	( new Plugin() )->init();
 }

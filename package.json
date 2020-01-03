@@ -8,7 +8,8 @@
 	"license": "ISC",
 	"scripts": {
 		"build": "webpack --config=.config/webpack.config.prod.js",
-		"start": "webpack-dev-server --config=.config/webpack.config.dev.js"
+		"start": "docker-compose up -d && webpack-dev-server --config=.config/webpack.config.dev.js",
+		"phpunit": "docker-compose exec phpfpm ./vendor/bin/phpunit"
 	},
 	"devDependencies": {
 		"@humanmade/webpack-helpers": "^0.6.1",
