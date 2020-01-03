@@ -1,0 +1,4 @@
+{
+  "editor.js": "http://localhost:9090/dist/editor.js",
+  "editor.js.map": "http://localhost:9090/dist/editor.js.map"
+}

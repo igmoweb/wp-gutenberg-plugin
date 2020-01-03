@@ -1,0 +1,17 @@
+{
+    "name": "ignacio/wp-gutenberg-plugin",
+    "authors": [
+        {
+            "name": "Ignacio Cruz",
+            "email": "igmoweb@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "wp-coding-standards/wpcs": "^2.2",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+    }
+}

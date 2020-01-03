@@ -1,0 +1,10 @@
+/wp-content/plugins/*
+!/wp-content/plugins/wp-harvest
+!/wp-content/plugins/startup-jobs
+
+/wp-content/themes/*
+!/wp-content/themes/startup-jobs
+
+/wp-includes/*
+/wp-admin/*
+package-lock.json
