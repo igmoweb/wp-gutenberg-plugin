@@ -1,57 +1,58 @@
 {
-	"name": "wp-gutenberg-plugin",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"keywords": [],
-	"author": "Ignacio Cruz <igmoweb@gmail.com>",
-	"license": "ISC",
-	"scripts": {
-		"build": "webpack --config=.config/webpack.config.prod.js",
-		"start": "webpack-dev-server --config=.config/webpack.config.dev.js",
-		"phpunit-docker": "docker-compose exec phpfpm ./vendor/bin/phpunit",
-		"phpunit": "./vendor/bin/phpunit"
-	},
-	"devDependencies": {
-		"@humanmade/webpack-helpers": "^0.6.1",
-		"babel-eslint": "^10.0.3",
-		"bell-on-bundler-error-plugin": "^2.0.0",
-		"clean-webpack-plugin": "^3.0.0",
-		"eslint": "^6.8.0",
-		"eslint-config-prettier": "^6.9.0",
-		"eslint-plugin-react": "^7.17.0",
-		"eslint-plugin-react-hooks": "^2.3.0",
-		"husky": "^3.1.0",
-		"lint-staged": "^9.5.0",
-		"node-sass": "^4.13.0",
-		"prettier": "^1.19.1",
-		"pretty-quick": "^2.0.1",
-		"stylelint": "^13.0.0",
-		"stylelint-config-wordpress": "^16.0.0",
-		"system-bell-webpack-plugin": "^1.0.0",
-		"webpack": "^4.41.5",
-		"webpack-cli": "^3.3.10",
-		"webpack-dev-server": "^3.10.1"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"src/**/*.{json,scss,css,html,js,php}": [
-			"pretty-quick --staged",
-			"eslint --fix",
-			"./vendor/bin/phpcbf",
-			"git add"
-		],
-		"{package,composer,.eslintrc,Gruntfile}.{json,js}": [
-			"pretty-quick --staged",
-			"git add"
-		],
-		"src/**/*.{scss,sass,css}": [
-			"stylelint --fix",
-			"git add"
-		]
-	}
+  "name": "wp-gutenberg-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Ignacio Cruz <igmoweb@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "postinstall": "composer install",
+    "build": "webpack --config=.config/webpack.config.prod.js",
+    "start": "webpack-dev-server --config=.config/webpack.config.dev.js",
+    "phpunit-docker": "docker-compose exec phpfpm ./vendor/bin/phpunit",
+    "phpunit": "./vendor/bin/phpunit"
+  },
+  "devDependencies": {
+    "@humanmade/webpack-helpers": "^0.6.1",
+    "babel-eslint": "^10.0.3",
+    "bell-on-bundler-error-plugin": "^2.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "stylelint": "^13.0.0",
+    "stylelint-config-wordpress": "^16.0.0",
+    "system-bell-webpack-plugin": "^1.0.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{json,scss,css,html,js,php}": [
+      "pretty-quick --staged",
+      "eslint --fix",
+      "./vendor/bin/phpcbf",
+      "git add"
+    ],
+    "{package,composer,.eslintrc,Gruntfile}.{json,js}": [
+      "pretty-quick --staged",
+      "git add"
+    ],
+    "src/**/*.{scss,sass,css}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  }
 }
