@@ -37,17 +37,16 @@ define( 'WP_DEBUG', true );
 // These tests will DROP ALL TABLES in the database with the prefix named below.
 // DO NOT use a production database or one that is shared with something else.
 
-$db_name = 'test';
+$db_name = getenv( 'MYSQL_DATABASE' ) ? getenv( 'MYSQL_DATABASE' ) : 'test';
 $db_user = getenv( 'MYSQL_USER' ) ? getenv( 'MYSQL_USER' ) : 'root';
-$db_pass = getenv( 'MYSQL_PASSWORD' ) ? getenv( 'MYSQL_PASSWORD' ) : 'password';
-$db_host = getenv( 'CI_NAME' ) ? 'localhost' : 'mysql';
+$db_pass = getenv( 'MYSQL_PASSWORD' ) ? getenv( 'MYSQL_PASSWORD' ) : 'root';
+$db_host = getenv( 'MYSQL_HOST' ) ? getenv( 'MYSQL_HOST' ) : 'localhost';
 define( 'DB_NAME', $db_name );
 define( 'DB_USER', $db_user );
 define( 'DB_PASSWORD', $db_pass );
 define( 'DB_HOST', $db_host );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
-
 /**#@+
  * Authentication Unique Keys and Salts.
  *

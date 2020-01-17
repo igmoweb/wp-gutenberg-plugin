@@ -11,8 +11,29 @@
 		{
 			"type": "git",
 			"url": "https://github.com/WordPress/wordpress-develop.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/igmoweb/dotfiles.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/igmoweb/dotfiles-installer.git"
 		}
 	],
+	"extra": {
+		"dotfiles": [
+			".babelrc.js",
+			".eslintignore",
+			".eslintrc.json",
+			".prettierignore",
+			".prettierrc.json",
+			"docker-compose.yml",
+			"phpcs.xml",
+			"phpunit.xml",
+			".stylelintrc"
+		]
+	},
 	"require-dev": {
 		"wp-coding-standards/wpcs": "^2.2",
 		"phpcompatibility/php-compatibility": "^9.3",
@@ -20,6 +41,7 @@
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
 		"wordpress/wordpress": "^5.3",
 		"wp-phpunit/wp-phpunit": "^5.3",
-		"phpunit/phpunit": "^7.0"
+		"phpunit/phpunit": "^7.0",
+		"igmoweb/dotfiles": "^1.0"
 	}
 }

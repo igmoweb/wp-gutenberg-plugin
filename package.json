@@ -8,12 +8,14 @@
 	"license": "ISC",
 	"scripts": {
 		"build": "webpack --config=.config/webpack.config.prod.js",
-		"start": "docker-compose up -d && webpack-dev-server --config=.config/webpack.config.dev.js",
-		"phpunit": "docker-compose exec phpfpm ./vendor/bin/phpunit"
+		"start": "webpack-dev-server --config=.config/webpack.config.dev.js",
+		"phpunit-docker": "docker-compose exec phpfpm ./vendor/bin/phpunit",
+		"phpunit": "./vendor/bin/phpunit"
 	},
 	"devDependencies": {
 		"@humanmade/webpack-helpers": "^0.6.1",
 		"babel-eslint": "^10.0.3",
+		"bell-on-bundler-error-plugin": "^2.0.0",
 		"clean-webpack-plugin": "^3.0.0",
 		"eslint": "^6.8.0",
 		"eslint-config-prettier": "^6.9.0",
@@ -24,6 +26,8 @@
 		"node-sass": "^4.13.0",
 		"prettier": "^1.19.1",
 		"pretty-quick": "^2.0.1",
+		"stylelint": "^13.0.0",
+		"stylelint-config-wordpress": "^16.0.0",
 		"system-bell-webpack-plugin": "^1.0.0",
 		"webpack": "^4.41.5",
 		"webpack-cli": "^3.3.10",
@@ -35,7 +39,7 @@
 		}
 	},
 	"lint-staged": {
-		"**/*.{json,scss,css,html,js,php}": [
+		"src/**/*.{json,scss,css,html,js,php}": [
 			"pretty-quick --staged",
 			"eslint --fix",
 			"./vendor/bin/phpcbf",
@@ -43,6 +47,10 @@
 		],
 		"{package,composer,.eslintrc,Gruntfile}.{json,js}": [
 			"pretty-quick --staged",
+			"git add"
+		],
+		"src/**/*.{scss,sass,css}": [
+			"stylelint --fix",
 			"git add"
 		]
 	}

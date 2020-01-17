@@ -1,11 +1,17 @@
 <phpunit
-	bootstrap="tests/php/bootstrap.php"
+  bootstrap="tests/php/bootstrap.php"
 	backupGlobals="false"
 	colors="true"
 	convertErrorsToExceptions="true"
 	convertNoticesToExceptions="true"
 	convertWarningsToExceptions="true"
 	>
+  <php>
+    <env name="MYSQL_DATABASE" value="test"/>
+    <env name="MYSQL_USER" value="root"/>
+    <env name="MYSQL_PASSWORD" value="root"/>
+    <env name="MYSQL_HOST" value="localhost"/>
+  </php>
 	<testsuites>
 		<testsuite name="wp-gutenberg-plugin">
 			<directory prefix="test-" suffix=".php">./tests/php/</directory>

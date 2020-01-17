@@ -1,7 +1,7 @@
 const { helpers, externals } = require('@humanmade/webpack-helpers');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { filePath } = helpers;
-const SystemBellPlugin = require('system-bell-webpack-plugin');
+const SystemBellPlugin = require('bell-on-bundler-error-plugin');
 
 module.exports = {
 	externals,
