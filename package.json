@@ -14,7 +14,7 @@
     "phpunit": "./vendor/bin/phpunit"
   },
   "devDependencies": {
-    "@humanmade/webpack-helpers": "^0.6.1",
+    "@humanmade/webpack-helpers": "^0.7.1",
     "babel-eslint": "^10.0.3",
     "bell-on-bundler-error-plugin": "^2.0.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -24,7 +24,7 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "stylelint": "^13.0.0",
